@@ -21,7 +21,9 @@ Exploratory data analysis of **23,917 civil aviation accidents and incidents** f
 |---|---|
 | ![Accidents per month](images/accidents_by_month.png) | ![Accidents by season](images/accidents_by_season.png) |
 
-![Distribution of accident categories](images/accident_categories.png)
+| Top 15 countries | Accident categories |
+|---|---|
+| ![Top 15 countries by number of accidents](images/top_countries.png) | ![Distribution of accident categories](images/accident_categories.png) |
 
 ## Approach
 
