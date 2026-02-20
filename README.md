@@ -13,7 +13,7 @@ Exploratory data analysis of **23,917 civil aviation accidents and incidents** f
 - **About 73% of records are hull-loss accidents** (ASN category A1), and another 10% are accidents with repairable damage (A2). Criminal occurrences, hijackings, and other events make up most of the remainder.
 - **Season makes almost no difference.** After adjusting seasons for each country's hemisphere, the four seasons are within 3% of each other (5,257–5,418 accidents).
 - **February has the fewest accidents**, but it is also the shortest month. Per day, it is in line with the rest of the year.
-- **Fatality counts are missing or zero for 17% of records**, which is why this project doesn't draw conclusions from fatality totals yet.
+- **Fatality counts are missing for 17% of records**, and some are stored as text like `"5+ 1"` (occupant + ground fatalities), which is why this project doesn't draw conclusions from fatality totals yet.
 
 ## Visualizations
 
