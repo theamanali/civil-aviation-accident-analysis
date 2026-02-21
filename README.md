@@ -4,10 +4,11 @@
 ![Python](https://img.shields.io/badge/Python-3-blue)
 ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
 
-Exploratory data analysis of **23,917 civil aviation accidents and incidents from 1919 to 2023**, from the [Aviation Safety Network](https://aviation-safety.net/) global database. The project looks at where, when, and what kind of accidents happen, and handles the messy parts of real-world data along the way: inconsistent dates, placeholder values, and fields that can't be taken at face value.
+Exploratory data analysis of **23,917 civil aviation accidents and incidents from 1919 to 2023**, from the [Aviation Safety Network](https://aviation-safety.net/) global database, combined with World Bank flight counts to measure accident rates. The project looks at where, when, and what kind of accidents happen, and handles the messy parts of real-world data along the way: inconsistent dates, placeholder values, and fields that can't be taken at face value.
 
 ## Key Findings
 
+- **Flying has become far safer.** Adjusted for flight volume, the civil accident rate fell about 71%, from 17.5 accidents per million departures in the 1970s to 5.1 in 2013–2022, while worldwide departures grew about 3.5x.
 - **World War II dominates the historical record.** Accidents peaked at 1,505 in 1944, and about 65% of 1943–45 records list the US Army Air Forces as operator, mostly C-47 transports. Since then, yearly counts peaked at 393 in 1969 and have averaged about 210 per year over the last decade.
 - **Aviation deaths have fallen about 74% since the 1970s**, from roughly 2,200 a year to under 600 a year over the last decade. The deadliest year, 2001, is driven by ground deaths on September 11.
 - **Most accidents aren't fatal.** 53% of accidents with a known fatality count killed no one, and the median fatal accident killed 5 people.
@@ -19,6 +20,8 @@ Exploratory data analysis of **23,917 civil aviation accidents and incidents fro
 - **No strong monthly pattern.** Per calendar day, months range from 58.4 accidents (October) to 69.1 (September). February has the lowest raw count, but that's mostly because it's the shortest month.
 
 ## Visualizations
+
+![Accident rate per million departures](images/accident_rate.png)
 
 ![Accidents per year](images/accidents_by_year.png)
 
@@ -43,7 +46,8 @@ Exploratory data analysis of **23,917 civil aviation accidents and incidents fro
    - Extracted month from accident dates and normalized monthly counts by days per month.
    - Mapped each country to a hemisphere (Northern, Southern, or equatorial) so that "winter" means December in Canada but July in Australia.
    - Derived meteorological seasons from month + hemisphere, excluding countries that straddle the equator and open-ocean locations (2,450 rows) instead of guessing. The data has no coordinates, and places near the equator mostly have wet and dry seasons rather than winter and summer, so a country lookup is as precise as the season comparison needs.
-5. **Aggregation and visualization:** grouped by year, month, season, country, ASN category, operator, and aircraft family with pandas, and plotted with Matplotlib and Seaborn.
+5. **Normalization by flight volume:** joined yearly accident counts with the World Bank's worldwide departures series (1970–2022). To keep the two sources comparable, only ASN accidents were counted, with military operators (matched by name, e.g. air forces, navies, the USAAF) and private flights excluded.
+6. **Aggregation and visualization:** grouped by year, month, season, country, ASN category, operator, and aircraft family with pandas, and plotted with Matplotlib and Seaborn.
 
 ## Tech Stack
 
@@ -58,12 +62,14 @@ pip install -r requirements.txt
 jupyter notebook analysis.ipynb
 ```
 
-The dataset downloads automatically on first run.
+Both datasets download automatically when the notebook runs.
 
 ## Next Steps
 
-- Normalize accident counts by flight volume, so countries with more air traffic aren't overrepresented
+- Per-country accident rates, which needs matching accident locations to where airlines are registered
+- Deaths per million passengers, using the World Bank's passenger series
 
 ## Data Source
 
-[Civil Aviation Accidents](https://www.kaggle.com/datasets/warcoder/civil-aviation-accidents) on Kaggle, sourced from the Aviation Safety Network.
+- [Civil Aviation Accidents](https://www.kaggle.com/datasets/warcoder/civil-aviation-accidents) on Kaggle, sourced from the Aviation Safety Network
+- [Air transport, registered carrier departures worldwide](https://data.worldbank.org/indicator/IS.AIR.DPRT) from the World Bank (CC BY 4.0)
