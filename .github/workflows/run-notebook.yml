@@ -1,0 +1,30 @@
+name: Run notebook
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Weekly, to catch breakage from new package releases (requirements.txt sets minimum versions only)
+  schedule:
+    - cron: "0 14 * * 1"
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # pandas 2 is what Colab ships; pandas 3 is the latest release
+        pandas: ["pandas>=2,<3", "pandas>=3"]
+    name: Run notebook (${{ matrix.pandas }})
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt "${{ matrix.pandas }}" nbconvert ipykernel
+      - name: Execute notebook
+        run: jupyter nbconvert --to notebook --execute analysis.ipynb --output executed.ipynb --ExecutePreprocessor.timeout=600

@@ -1,6 +1,7 @@
 # Civil Aviation Accident Analysis
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/theamanali/civil-aviation-accident-analysis/blob/main/analysis.ipynb)
+[![Run notebook](https://github.com/theamanali/civil-aviation-accident-analysis/actions/workflows/run-notebook.yml/badge.svg)](https://github.com/theamanali/civil-aviation-accident-analysis/actions/workflows/run-notebook.yml)
 ![Python](https://img.shields.io/badge/Python-3-blue)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
 
@@ -68,6 +69,7 @@ The accident dataset downloads automatically when the notebook runs.
 
 - The Kaggle dataset is pinned to version 1, so results don't change if it's updated.
 - World Bank data is read from saved copies in [`data/world_bank/`](data/world_bank), so results don't change when the World Bank revises past figures. To pull the latest data, run `python scripts/update_world_bank_data.py` and re-run the notebook.
+- A [GitHub Action](.github/workflows/run-notebook.yml) runs the whole notebook on pandas 2 and 3 on every push and weekly, to catch breakage from new package releases.
 
 ## Next Steps
 
