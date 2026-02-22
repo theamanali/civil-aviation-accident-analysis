@@ -72,3 +72,7 @@ Both datasets download automatically when the notebook runs.
 
 - [Civil Aviation Accidents](https://www.kaggle.com/datasets/warcoder/civil-aviation-accidents) on Kaggle, sourced from the Aviation Safety Network
 - World Bank (CC BY 4.0): [Air transport, registered carrier departures worldwide](https://data.worldbank.org/indicator/IS.AIR.DPRT) and [Air transport, passengers carried](https://data.worldbank.org/indicator/IS.AIR.PSGR)
+
+## License
+
+Code is released under the [MIT License](LICENSE). The World Bank data in `data/world_bank/` is © World Bank, licensed under CC BY 4.0. The accident dataset isn't included in this repository.
