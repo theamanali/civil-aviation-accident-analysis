@@ -18,13 +18,25 @@ More findings (seasonality, World War II, fatalities, data quality) are in the [
 
 ## Visualizations
 
-![Accident rate per million departures](images/accident_rate.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/accident_rate-dark.png">
+  <img alt="Accident rate per million departures" src="images/accident_rate.png">
+</picture>
 
-![On-board deaths per million passengers](images/deaths_per_passenger.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/deaths_per_passenger-dark.png">
+  <img alt="On-board deaths per million passengers" src="images/deaths_per_passenger.png">
+</picture>
 
-![Accident rates by country](images/country_accident_rates.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/country_accident_rates-dark.png">
+  <img alt="Accident rates by country" src="images/country_accident_rates.png">
+</picture>
 
-![Severity by aircraft family](images/severity_by_aircraft.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/severity_by_aircraft-dark.png">
+  <img alt="Severity by aircraft family" src="images/severity_by_aircraft.png">
+</picture>
 
 Charts for the other findings (by year, month, season, country, and category) are in the [notebook](analysis.ipynb).
 
@@ -60,6 +72,7 @@ The accident dataset downloads automatically when the notebook runs.
 
 - The Kaggle dataset is pinned to version 1, so results don't change if it's updated.
 - World Bank data is read from saved copies in [`data/world_bank/`](data/world_bank), so results don't change when the World Bank revises past figures. To pull the latest data, run `python scripts/update_world_bank_data.py` and re-run the notebook.
+- The README charts come straight from the notebook: `python scripts/export_readme_charts.py` re-renders them in light and dark versions, and GitHub shows the dark ones to visitors using dark mode.
 - A [GitHub Action](.github/workflows/run-notebook.yml) runs the whole notebook on pandas 2 and 3 on every push and weekly, to catch breakage from new package releases.
 
 ## Next Steps
