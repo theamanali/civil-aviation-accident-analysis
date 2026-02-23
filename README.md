@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/Python-3-blue)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
 
-Exploratory data analysis of **23,917 civil aviation accidents and incidents from 1919 to 2023**, from the [Aviation Safety Network](https://aviation-safety.net/) global database, combined with World Bank flight and passenger counts to measure accident and death rates. The project looks at where, when, and what kind of accidents happen, and handles the messy parts of real-world data along the way: inconsistent dates, placeholder values, and fields that can't be taken at face value.
+Exploratory data analysis of **23,917 civil aviation accidents and incidents from 1919 to 2023**, from the [Aviation Safety Network](https://aviation-safety.net/) global database, combined with World Bank flight and passenger counts to measure accident and death rates. The project looks at where, when, and what kind of accidents happen.
 
 ## Key Findings
 
@@ -42,16 +42,22 @@ Charts for the other findings (by year, month, season, country, and category) ar
 
 ## Approach
 
-1. **Data loading:** pulled the dataset programmatically with `kagglehub` so the notebook runs end to end without manual downloads.
+1. **Data loading:** pulled the accident dataset programmatically with `kagglehub` (pinned to one version) so the notebook runs end to end without manual downloads, and read World Bank departure and passenger counts from saved snapshots.
 2. **Data quality audit:** built a missingness report that counts true nulls *and* placeholder values per column. Text placeholders (`"unknown"`, `"N/A"`, `"?"`, blanks) are matched case-insensitively, and numeric ones (`0`, `-1`) are skipped for columns where zero is a real value, like fatalities.
-3. **Cleaning:** parsed free-form dates with `pd.to_datetime(format="mixed", errors="coerce")`, converted country placeholders (`"?"`, `"Unknown country"`) to nulls, and kept invalid rows out of time-based analysis instead of imputing them. Parsed the text `fatalities` column (`"5"` or `"5+ 1"`) into on-board, ground, and total counts with a regex, keeping missing values missing instead of treating them as 0. Grouped 3,193 aircraft type variants into 806 families (e.g. `"Douglas C-47A (DC-3)"` and `"Douglas DC-3A-197D"` → DC-3).
+3. **Cleaning:** parsed free-form dates with `pd.to_datetime(format="mixed", errors="coerce")`, converted country placeholders (`"?"`, `"Unknown country"`) to nulls, and kept invalid rows out of time-based analysis instead of imputing them. Parsed the text `fatalities` column (`"5"` or `"5+ 1"`) into on-board, ground, and total counts with a regex, keeping missing values missing instead of treating them as 0.
 4. **Feature engineering:**
-   - Extracted month from accident dates and normalized monthly counts by days per month.
-   - Mapped each country to a hemisphere (Northern, Southern, or equatorial) so that "winter" means December in Canada but July in Australia.
-   - Derived meteorological seasons from month + hemisphere, excluding countries that straddle the equator and open-ocean locations (2,450 rows) instead of guessing. The data has no coordinates, and places near the equator mostly have wet and dry seasons rather than winter and summer, so a country lookup is as precise as the season comparison needs.
-5. **Normalization by flight volume:** joined yearly accident counts with the World Bank's worldwide departures series (1970–2022). To keep the two sources comparable, only ASN accidents were counted, with military operators (matched by name, e.g. air forces, navies, the USAAF) and private flights excluded. Divided on-board deaths by the World Bank's passengers-carried series to get deaths per million passengers, counting bombings, shootdowns, and hijackings alongside accidents, since they kill passengers too. Repeated the accident rate for the 20 busiest countries using country-level departures, with a name mapping between ASN and World Bank country names and a note that ASN records accident location while the World Bank records airline registration.
-6. **Statistical testing:** chi-square tests for monthly and seasonal patterns (adjusted for month and season length), log-linear trend fits with confidence intervals for the accident and death rates, exact Poisson confidence intervals for country rates, a cluster bootstrap (resampling whole countries) for the gap between the busiest and smaller markets, Wilson confidence intervals for the share of fatal accidents, and Mann-Whitney tests comparing military with civil operators and mid-sized with the busiest countries. Testing changed some claims: month-to-month differences turned out to be statistically significant, though small; and the smaller-markets comparison was corrected to include countries with no accidents, which lowered it from 9.3 to 8.85 per million departures and showed the gap comes from the smallest markets.
-7. **Aggregation and visualization:** grouped by year, month, season, country, ASN category, operator, and aircraft family with pandas, and plotted with Matplotlib and Seaborn using one consistent style: a headline that states each chart's takeaway, a single accent color, quiet axes, and direct labels on key events.
+   - Extracted month from accident dates.
+   - Grouped 3,193 aircraft type variants into 806 families (e.g. `"Douglas C-47A (DC-3)"` and `"Douglas DC-3A-197D"` → DC-3).
+   - Flagged military operators by name (air forces, navies, the USAAF, and so on) and private flights, so they can be separated from civil aviation.
+   - Mapped each country to a hemisphere (Northern, Southern, or equatorial) so that "winter" means December in Canada but July in Australia, then derived meteorological seasons from month + hemisphere. Countries that straddle the equator and open-ocean locations (2,450 rows) are excluded instead of guessed. The data has no coordinates, and places near the equator mostly have wet and dry seasons rather than winter and summer, so a country lookup is as precise as the season comparison needs.
+5. **Aggregation:** grouped accidents and deaths by year, month, season, country, ASN category, operator, and aircraft family with pandas.
+6. **Normalization:** turned counts into comparable rates:
+   - Monthly counts per calendar day, since months differ in length.
+   - Civil accidents per million worldwide departures (1970–2022). To keep the two sources comparable, only ASN accidents are counted, with military and private flights excluded.
+   - On-board deaths per million passengers, counting bombings, shootdowns, and hijackings alongside accidents, since they kill passengers too.
+   - Accident rates for the 20 busiest countries using country-level departures, with a name mapping between ASN and World Bank country names and a note that ASN records accident location while the World Bank records airline registration.
+7. **Statistical testing:** chi-square tests for monthly and seasonal patterns (adjusted for month and season length), log-linear trend fits with confidence intervals for the accident and death rates, exact Poisson confidence intervals for country rates, a cluster bootstrap (resampling whole countries) for the gap between the busiest and smaller markets, Wilson confidence intervals for the share of fatal accidents, and Mann-Whitney tests comparing military with civil operators and mid-sized with the busiest countries. Testing changed some claims: month-to-month differences turned out to be statistically significant, though small; and the smaller-markets comparison was corrected to include countries with no accidents, which lowered it from 9.3 to 8.85 per million departures and showed the gap comes from the smallest markets.
+8. **Visualization:** plotted with Matplotlib and Seaborn using one consistent style: a headline that states each chart's takeaway, a single accent color, quiet axes, and direct labels on key events, with light and dark versions for the README.
 
 ## Tech Stack
 
@@ -59,14 +65,26 @@ Python · pandas · NumPy · SciPy · Matplotlib · Seaborn · kagglehub · Goog
 
 ## Run It
 
-Click **Open in Colab** above, or run it locally:
+**In your browser (nothing to install):**
+
+1. Click **Open in Colab** at the top of this page.
+2. In Colab, choose **Runtime → Run all**.
+3. If Colab warns that the notebook wasn't written by Google, click **Run anyway**.
+
+It takes under a minute once Colab connects. Tables and charts appear under each cell. You don't need a Kaggle account.
+
+**On your own computer** (needs [Python](https://www.python.org/downloads/) 3.12 or newer and [Git](https://git-scm.com/downloads)):
 
 ```bash
+git clone https://github.com/theamanali/civil-aviation-accident-analysis.git
+cd civil-aviation-accident-analysis
+python3 -m venv .venv
+source .venv/bin/activate   # on Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 jupyter notebook analysis.ipynb
 ```
 
-The accident dataset downloads automatically when the notebook runs.
+In the Jupyter tab that opens in your browser, choose **Run → Run All Cells**.
 
 ### Reproducibility
 
