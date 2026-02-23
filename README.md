@@ -9,10 +9,12 @@ Exploratory data analysis of **23,917 civil aviation accidents and incidents fro
 
 ## Key Findings
 
-- **Flying has become far safer.** Adjusted for flight volume, the civil accident rate fell about 71%, from 17.5 accidents per million departures in the 1970s to 5.1 in 2013–2022, a steady decline of about 2.9% per year (95% CI 2.7–3.1%), while worldwide departures grew about 3.5x.
-- **The risk of dying on board fell about 97%**, from roughly 1 death per 240,000 passengers in the 1970s to 1 per 7.5 million in 2013–2022, as passenger numbers grew more than 7x.
-- **Accident rates vary widely by country.** Adjusted for flight volume (2000–2019), Russia, Indonesia, Canada, and Mexico had 2–4x the rate of the US and UK, significantly above the worldwide rate based on 95% confidence intervals, while China and Japan were among the lowest. Countries outside the 20 busiest averaged about 2.1x their rate (95% bootstrap CI 1.4–3.3x), a gap driven by the smallest markets; mid-sized countries weren't significantly different from the busiest.
-- **Modern jets are the most survivable.** About 21% of Boeing 727 and 737 accidents killed anyone, versus 62% for the DC-3 (95% CIs 17–26% vs 60–64%). Military operators had a higher share of fatal accidents than civil ones (66% vs 41%, p < 0.001), though 37% of military records lack a fatality count, so that gap may be overstated.
+- **Flying has become far safer.** Adjusted for flight volume, the civil accident rate fell about 71%, from 17.5 accidents per million departures in the 1970s to 5.1 in 2013–2022, or about 2.9% a year (95% CI 2.7–3.1%).
+- **The risk of dying on board fell about 97%.** It went from roughly 1 death per 240,000 passengers in the 1970s to 1 per 7.5 million in 2013–2022.
+- **Accident rates vary widely by country.** Adjusted for flight volume (2000–2019), Russia, Indonesia, Canada, and Mexico had 2–4x the rate of the US and UK, significantly above the worldwide rate. China and Japan were among the lowest.
+- **The smallest aviation markets have the highest rates.** Countries outside the 20 busiest averaged about 2.1x their rate (95% CI 1.4–3.3x), driven by the 121 countries with under 1 million departures over 2000–2019. Mid-sized countries weren't significantly different from the busiest.
+- **Modern jets are the most survivable.** About 21% of Boeing 727 and 737 accidents killed anyone, versus 62% for the DC-3 (95% CIs 17–26% vs 60–64%).
+- **Military accidents were more often fatal.** 66% of military operators' accidents killed someone, versus 41% for civil operators (p < 0.001). But 37% of military records lack a fatality count, so that gap may be overstated.
 
 More findings (seasonality, World War II, fatalities, data quality) are in the [notebook](analysis.ipynb), each with a short takeaway.
 
@@ -86,7 +88,7 @@ jupyter notebook analysis.ipynb
 
 In the Jupyter tab that opens in your browser, choose **Run → Run All Cells**.
 
-### Reproducibility
+## Reproducibility
 
 - The Kaggle dataset is pinned to version 1, so results don't change if it's updated.
 - World Bank data is read from saved copies in [`data/world_bank/`](data/world_bank), so results don't change when the World Bank revises past figures. To pull the latest data, run `python scripts/update_world_bank_data.py` and re-run the notebook.
