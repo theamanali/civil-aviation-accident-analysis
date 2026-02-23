@@ -67,7 +67,7 @@ Python · pandas · NumPy · SciPy · Matplotlib · Seaborn · kagglehub · Goog
 
 **In your browser (nothing to install):**
 
-1. Click **Open in Colab** at the top of this page.
+1. [Open the notebook in Colab](https://colab.research.google.com/github/theamanali/civil-aviation-accident-analysis/blob/main/analysis.ipynb).
 2. In Colab, choose **Runtime → Run all**.
 3. If Colab warns that the notebook wasn't written by Google, click **Run anyway**.
 
@@ -93,7 +93,7 @@ In the Jupyter tab that opens in your browser, choose **Run → Run All Cells**.
 - The README charts come straight from the notebook: `python scripts/export_readme_charts.py` re-renders them in light and dark versions, and GitHub shows the dark ones to visitors using dark mode.
 - A [GitHub Action](.github/workflows/run-notebook.yml) runs the whole notebook on pandas 2 and 3 on every push and weekly, to catch breakage from new package releases.
 
-## Next Steps
+## Possible Next Steps
 
 - Accident causes and phase of flight, which this dataset doesn't record; a richer source such as the NTSB database would be needed
 
