@@ -12,6 +12,7 @@ import pathlib
 import urllib.request
 
 API_URL = "https://api.worldbank.org/v2/country/{country}/indicator/{indicator}?format=json&per_page=20000{dates}"
+COUNTRIES_URL = "https://api.worldbank.org/v2/country?format=json&per_page=400"
 OUT_DIR = pathlib.Path(__file__).resolve().parent.parent / "data" / "world_bank"
 
 # (file name, country code, indicator, description, optional year range)
@@ -29,8 +30,17 @@ def fetch(country, indicator, years=None):
     return meta, [row for row in rows if row["value"] is not None]
 
 
+def fetch_aggregate_codes():
+    """Codes for World Bank groupings like "World" or "High income", which aren't countries."""
+    with urllib.request.urlopen(COUNTRIES_URL, timeout=60) as response:
+        _, countries = json.load(response)
+    # Income groups appear in indicator data with only a 2-letter code (e.g. "XD" for High income), so keep both
+    return {code for c in countries if c["region"]["value"] == "Aggregates" for code in (c["id"], c["iso2Code"])}
+
+
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    aggregate_codes = fetch_aggregate_codes()
     table = []
     for name, country, indicator, description, years in SNAPSHOTS:
         meta, rows = fetch(country, indicator, years)
@@ -40,9 +50,9 @@ def main():
                 writer.writerow(["year", "value"])
                 writer.writerows((r["date"], r["value"]) for r in sorted(rows, key=lambda r: r["date"]))
             else:
-                writer.writerow(["country", "year", "value"])
+                writer.writerow(["country", "year", "value", "is_aggregate"])
                 writer.writerows(
-                    (r["country"]["value"], r["date"], r["value"])
+                    (r["country"]["value"], r["date"], r["value"], r["countryiso3code"] in aggregate_codes or r["country"]["id"] in aggregate_codes)
                     for r in sorted(rows, key=lambda r: (r["country"]["value"], r["date"]))
                 )
         coverage = f"{years[0]}-{years[1]}" if years else f"{min(r['date'] for r in rows)}-{max(r['date'] for r in rows)}"
@@ -52,7 +62,8 @@ def main():
     (OUT_DIR / "README.md").write_text(
         "# World Bank snapshots\n\n"
         "Saved copies of the World Bank data used by `analysis.ipynb`, so the results don't change when the World Bank "
-        "revises past figures. Years with no value are left out.\n\n"
+        "revises past figures. Years with no value are left out. In the by-country file, `is_aggregate` marks "
+        "World Bank groupings such as \"World\" or \"High income\" that aren't countries.\n\n"
         "| File | Series | Years | World Bank last updated |\n|---|---|---|---|\n"
         + "\n".join(table)
         + "\n\nTo refresh, run `python scripts/update_world_bank_data.py` and re-run the notebook.\n\n"

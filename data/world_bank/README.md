@@ -1,6 +1,6 @@
 # World Bank snapshots
 
-Saved copies of the World Bank data used by `analysis.ipynb`, so the results don't change when the World Bank revises past figures. Years with no value are left out.
+Saved copies of the World Bank data used by `analysis.ipynb`, so the results don't change when the World Bank revises past figures. Years with no value are left out. In the by-country file, `is_aggregate` marks World Bank groupings such as "World" or "High income" that aren't countries.
 
 | File | Series | Years | World Bank last updated |
 |---|---|---|---|
