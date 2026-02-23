@@ -1,0 +1,177 @@
+country,departures,accidents,accidents_per_million_departures,ci_low,ci_high,vs_world_rate,world_rate,departures_rank,market_group,in_busiest_chart
+United States,188588182,784,4.157,3.871,4.459,Significantly below,5.833,1,Busiest 20,True
+China,48850065,24,0.491,0.315,0.731,Significantly below,5.833,2,Busiest 20,True
+Canada,22788425,223,9.786,8.543,11.158,Significantly above,5.833,3,Busiest 20,True
+United Kingdom,20734955,86,4.148,3.318,5.122,Significantly below,5.833,4,Busiest 20,True
+Germany,19134737,57,2.979,2.256,3.859,Significantly below,5.833,5,Busiest 20,True
+Japan,15947287,22,1.38,0.865,2.089,Significantly below,5.833,6,Busiest 20,True
+Brazil,14935114,97,6.495,5.267,7.923,Not significant,5.833,7,Busiest 20,True
+France,14146071,49,3.464,2.563,4.579,Significantly below,5.833,8,Busiest 20,True
+India,12306443,35,2.844,1.981,3.955,Significantly below,5.833,9,Busiest 20,True
+Russian Federation,11354455,171,15.06,12.887,17.494,Significantly above,5.833,10,Busiest 20,True
+Spain,11081954,28,2.527,1.679,3.652,Significantly below,5.833,11,Busiest 20,True
+Ireland,10579464,12,1.134,0.586,1.981,Significantly below,5.833,12,Busiest 20,True
+Australia,10477475,45,4.295,3.133,5.747,Significantly below,5.833,13,Busiest 20,True
+Indonesia,9840641,113,11.483,9.464,13.806,Significantly above,5.833,14,Busiest 20,True
+Mexico,7888260,77,9.761,7.703,12.2,Significantly above,5.833,15,Busiest 20,True
+Turkiye,7740012,23,2.972,1.884,4.459,Significantly below,5.833,16,Busiest 20,True
+Sweden,7373676,2,0.271,0.033,0.98,Significantly below,5.833,17,Busiest 20,False
+Italy,6771161,40,5.907,4.22,8.044,Not significant,5.833,18,Busiest 20,True
+"Korea, Rep.",6435863,6,0.932,0.342,2.029,Significantly below,5.833,19,Busiest 20,False
+Malaysia,5962465,13,2.18,1.161,3.728,Significantly below,5.833,20,Busiest 20,True
+Netherlands,5676114,19,3.347,2.015,5.227,Significantly below,5.833,21,Other 1M+ departures,False
+Colombia,4994607,58,11.613,8.818,15.012,Significantly above,5.833,22,Other 1M+ departures,False
+Thailand,4685840,10,2.134,1.023,3.925,Significantly below,5.833,23,Other 1M+ departures,False
+Switzerland,4274737,22,5.147,3.225,7.792,Not significant,5.833,24,Other 1M+ departures,False
+United Arab Emirates,4227363,11,2.602,1.299,4.656,Significantly below,5.833,25,Other 1M+ departures,False
+New Zealand,4224105,8,1.894,0.818,3.732,Significantly below,5.833,26,Other 1M+ departures,False
+Saudi Arabia,3628583,8,2.205,0.952,4.344,Significantly below,5.833,27,Other 1M+ departures,False
+South Africa,3455206,26,7.525,4.915,11.026,Not significant,5.833,28,Other 1M+ departures,False
+Philippines,3338679,31,9.285,6.309,13.179,Significantly above,5.833,29,Other 1M+ departures,False
+"Hong Kong SAR, China",3268500,2,0.612,0.074,2.21,Significantly below,5.833,30,Other 1M+ departures,False
+Austria,3158305,7,2.216,0.891,4.567,Significantly below,5.833,31,Other 1M+ departures,False
+Belgium,3104126,5,1.611,0.523,3.759,Significantly below,5.833,32,Other 1M+ departures,False
+"Iran, Islamic Rep.",2923842,41,14.023,10.063,19.023,Significantly above,5.833,33,Other 1M+ departures,False
+Portugal,2797307,13,4.647,2.475,7.947,Not significant,5.833,34,Other 1M+ departures,False
+Singapore,2580053,5,1.938,0.629,4.523,Significantly below,5.833,35,Other 1M+ departures,False
+Viet Nam,2555485,2,0.783,0.095,2.827,Significantly below,5.833,36,Other 1M+ departures,False
+Finland,2545566,3,1.179,0.243,3.444,Significantly below,5.833,37,Other 1M+ departures,False
+Greece,2536598,6,2.365,0.868,5.148,Significantly below,5.833,38,Other 1M+ departures,False
+Argentina,2303734,30,13.022,8.786,18.59,Significantly above,5.833,39,Other 1M+ departures,False
+Chile,2158343,7,3.243,1.304,6.682,Not significant,5.833,40,Other 1M+ departures,False
+"Venezuela, RB",2087222,69,33.058,25.721,41.837,Significantly above,5.833,41,Other 1M+ departures,False
+Qatar,2050512,0,0.0,0.0,1.799,Significantly below,5.833,42,Other 1M+ departures,False
+Hungary,1810592,1,0.552,0.014,3.077,Significantly below,5.833,43,Other 1M+ departures,False
+Peru,1704911,16,9.385,5.364,15.24,Not significant,5.833,44,Other 1M+ departures,False
+Poland,1690108,9,5.325,2.435,10.109,Not significant,5.833,45,Other 1M+ departures,False
+"Egypt, Arab Rep.",1496462,8,5.346,2.308,10.534,Not significant,5.833,46,Other 1M+ departures,False
+Panama,1460705,12,8.215,4.245,14.35,Not significant,5.833,47,Other 1M+ departures,False
+Norway,1399757,4,2.858,0.779,7.317,Not significant,5.833,48,Other 1M+ departures,False
+Kenya,1308789,35,26.742,18.627,37.192,Significantly above,5.833,49,Other 1M+ departures,False
+Morocco,1260224,7,5.555,2.233,11.445,Not significant,5.833,50,Other 1M+ departures,False
+Czechia,1161293,2,1.722,0.209,6.221,Not significant,5.833,51,Other 1M+ departures,False
+Ethiopia,1141942,6,5.254,1.928,11.436,Not significant,5.833,52,Other 1M+ departures,False
+Pakistan,1122562,19,16.926,10.19,26.431,Significantly above,5.833,53,Other 1M+ departures,False
+Algeria,1090623,7,6.418,2.581,13.224,Not significant,5.833,54,Other 1M+ departures,False
+Ukraine,1017175,25,24.578,15.906,36.282,Significantly above,5.833,55,Other 1M+ departures,False
+Belize,944842,4,4.234,1.153,10.839,Not significant,5.833,56,Under 1M departures,False
+Israel,935522,3,3.207,0.661,9.372,Not significant,5.833,57,Under 1M departures,False
+Romania,881211,15,17.022,9.527,28.075,Significantly above,5.833,58,Under 1M departures,False
+Luxembourg,874310,2,2.288,0.277,8.263,Not significant,5.833,59,Under 1M departures,False
+Ecuador,860658,13,15.105,8.043,25.83,Significantly above,5.833,60,Under 1M departures,False
+Kazakhstan,797998,17,21.303,12.41,34.109,Significantly above,5.833,61,Under 1M departures,False
+Antigua and Barbuda,785040,2,2.548,0.309,9.203,Not significant,5.833,62,Under 1M departures,False
+Costa Rica,773395,8,10.344,4.466,20.382,Not significant,5.833,63,Under 1M departures,False
+Bahrain,769671,1,1.299,0.033,7.239,Not significant,5.833,64,Under 1M departures,False
+Nigeria,761485,29,38.083,25.505,54.694,Significantly above,5.833,65,Under 1M departures,False
+"Bahamas, The",726974,24,33.014,21.152,49.122,Significantly above,5.833,66,Under 1M departures,False
+Myanmar,715167,12,16.779,8.67,29.31,Significantly above,5.833,67,Under 1M departures,False
+Oman,701758,1,1.425,0.036,7.94,Not significant,5.833,68,Under 1M departures,False
+Bolivia,681866,19,27.865,16.776,43.514,Significantly above,5.833,69,Under 1M departures,False
+Latvia,680812,0,0.0,0.0,5.418,Significantly below,5.833,70,Under 1M departures,False
+Fiji,664463,4,6.02,1.64,15.413,Not significant,5.833,71,Under 1M departures,False
+Papua New Guinea,651607,21,32.228,19.95,49.264,Significantly above,5.833,72,Under 1M departures,False
+Tunisia,612418,3,4.899,1.01,14.316,Not significant,5.833,73,Under 1M departures,False
+Jordan,601870,1,1.661,0.042,9.257,Not significant,5.833,74,Under 1M departures,False
+Bangladesh,592813,8,13.495,5.826,26.59,Not significant,5.833,75,Under 1M departures,False
+Kuwait,544113,1,1.838,0.047,10.24,Not significant,5.833,76,Under 1M departures,False
+Trinidad and Tobago,525566,0,0.0,0.0,7.019,Not significant,5.833,77,Under 1M departures,False
+El Salvador,512290,1,1.952,0.049,10.876,Not significant,5.833,78,Under 1M departures,False
+Denmark,507813,2,3.938,0.477,14.227,Not significant,5.833,79,Under 1M departures,False
+Tanzania,497829,23,46.201,29.287,69.323,Significantly above,5.833,80,Under 1M departures,False
+Sri Lanka,492524,2,4.061,0.492,14.669,Not significant,5.833,81,Under 1M departures,False
+Uzbekistan,479603,4,8.34,2.272,21.354,Not significant,5.833,82,Under 1M departures,False
+Nepal,475371,31,65.212,44.309,92.564,Significantly above,5.833,83,Under 1M departures,False
+Croatia,470684,1,2.125,0.054,11.837,Not significant,5.833,84,Under 1M departures,False
+Iceland,464587,3,6.457,1.332,18.871,Not significant,5.833,85,Under 1M departures,False
+Serbia,414556,1,2.412,0.061,13.44,Not significant,5.833,86,Under 1M departures,False
+"Macao SAR, China",386454,1,2.588,0.066,14.417,Not significant,5.833,87,Under 1M departures,False
+Slovenia,369116,1,2.709,0.069,15.095,Not significant,5.833,88,Under 1M departures,False
+Lebanon,352546,1,2.837,0.072,15.804,Not significant,5.833,89,Under 1M departures,False
+Seychelles,344377,0,0.0,0.0,10.712,Not significant,5.833,90,Under 1M departures,False
+Malta,309314,2,6.466,0.783,23.357,Not significant,5.833,91,Under 1M departures,False
+Azerbaijan,301735,3,9.942,2.05,29.056,Not significant,5.833,92,Under 1M departures,False
+Libya,286697,4,13.952,3.801,35.723,Not significant,5.833,93,Under 1M departures,False
+Belarus,285818,2,6.997,0.847,25.277,Not significant,5.833,94,Under 1M departures,False
+Turkmenistan,285606,0,0.0,0.0,12.916,Not significant,5.833,95,Under 1M departures,False
+Madagascar,277712,1,3.601,0.091,20.063,Not significant,5.833,96,Under 1M departures,False
+Cuba,271868,8,29.426,12.704,57.981,Significantly above,5.833,97,Under 1M departures,False
+"Yemen, Rep.",260441,1,3.84,0.097,21.393,Not significant,5.833,98,Under 1M departures,False
+Mauritius,259872,0,0.0,0.0,14.195,Not significant,5.833,99,Under 1M departures,False
+Cyprus,251490,0,0.0,0.0,14.668,Not significant,5.833,100,Under 1M departures,False
+Mozambique,239686,5,20.861,6.773,48.682,Significantly above,5.833,101,Under 1M departures,False
+Brunei Darussalam,238242,0,0.0,0.0,15.484,Not significant,5.833,102,Under 1M departures,False
+Solomon Islands,235886,2,8.479,1.027,30.628,Not significant,5.833,103,Under 1M departures,False
+Monaco,232259,0,0.0,0.0,15.883,Not significant,5.833,104,Under 1M departures,False
+Cabo Verde,229829,0,0.0,0.0,16.051,Not significant,5.833,105,Under 1M departures,False
+Maldives,224136,11,49.077,24.499,87.813,Significantly above,5.833,106,Under 1M departures,False
+Jamaica,222695,1,4.49,0.114,25.019,Not significant,5.833,107,Under 1M departures,False
+Lao PDR,215528,7,32.478,13.058,66.918,Significantly above,5.833,108,Under 1M departures,False
+Syrian Arab Republic,211303,2,9.465,1.146,34.191,Not significant,5.833,109,Under 1M departures,False
+Bulgaria,211300,6,28.396,10.421,61.805,Significantly above,5.833,110,Under 1M departures,False
+Afghanistan,203795,16,78.51,44.875,127.496,Significantly above,5.833,111,Under 1M departures,False
+Estonia,200432,6,29.935,10.986,65.156,Significantly above,5.833,112,Under 1M departures,False
+Lithuania,194414,1,5.144,0.13,28.659,Not significant,5.833,113,Under 1M departures,False
+Honduras,194221,4,20.595,5.611,52.732,Not significant,5.833,114,Under 1M departures,False
+Kyrgyz Republic,189499,12,63.325,32.721,110.616,Significantly above,5.833,115,Under 1M departures,False
+Iraq,185834,1,5.381,0.136,29.982,Not significant,5.833,116,Under 1M departures,False
+Angola,184708,26,140.763,91.951,206.25,Significantly above,5.833,117,Under 1M departures,False
+Ghana,177010,6,33.896,12.439,73.778,Significantly above,5.833,118,Under 1M departures,False
+Samoa,170611,0,0.0,0.0,21.622,Not significant,5.833,119,Under 1M departures,False
+Sudan,159215,29,182.143,121.984,261.588,Significantly above,5.833,120,Under 1M departures,False
+Namibia,158644,4,25.214,6.87,64.557,Significantly above,5.833,121,Under 1M departures,False
+Paraguay,153898,0,0.0,0.0,23.97,Not significant,5.833,122,Under 1M departures,False
+Botswana,148639,3,20.183,4.162,58.983,Not significant,5.833,123,Under 1M departures,False
+Cambodia,146434,3,20.487,4.225,59.872,Not significant,5.833,124,Under 1M departures,False
+Slovak Republic,144339,3,20.784,4.286,60.741,Not significant,5.833,125,Under 1M departures,False
+Zimbabwe,141411,4,28.286,7.707,72.424,Significantly above,5.833,126,Under 1M departures,False
+Cameroon,138998,4,28.777,7.841,73.682,Significantly above,5.833,127,Under 1M departures,False
+Moldova,137821,2,14.512,1.757,52.421,Not significant,5.833,128,Under 1M departures,False
+Vanuatu,136155,3,22.034,4.544,64.392,Not significant,5.833,129,Under 1M departures,False
+Mongolia,126347,1,7.915,0.2,44.098,Not significant,5.833,130,Under 1M departures,False
+Equatorial Guinea,126035,0,0.0,0.0,29.269,Not significant,5.833,131,Under 1M departures,False
+Zambia,125998,1,7.937,0.201,44.22,Not significant,5.833,132,Under 1M departures,False
+Tajikistan,125509,2,15.935,1.93,57.563,Not significant,5.833,133,Under 1M departures,False
+Rwanda,111375,0,0.0,0.0,33.121,Not significant,5.833,134,Under 1M departures,False
+Togo,108137,0,0.0,0.0,34.113,Not significant,5.833,135,Under 1M departures,False
+"Congo, Rep.",99347,4,40.263,10.97,103.089,Significantly above,5.833,136,Under 1M departures,False
+"Congo, Dem. Rep.",95798,46,480.177,351.55,640.489,Significantly above,5.833,137,Under 1M departures,False
+Albania,94428,0,0.0,0.0,39.065,Not significant,5.833,138,Under 1M departures,False
+Gabon,93047,7,75.231,30.247,155.004,Significantly above,5.833,139,Under 1M departures,False
+Montenegro,91056,0,0.0,0.0,40.512,Not significant,5.833,140,Under 1M departures,False
+Uruguay,89086,2,22.45,2.719,81.098,Not significant,5.833,141,Under 1M departures,False
+Georgia,85666,1,11.673,0.296,65.039,Not significant,5.833,142,Under 1M departures,False
+Cote d'Ivoire,82625,2,24.206,2.931,87.439,Not significant,5.833,143,Under 1M departures,False
+Armenia,76274,1,13.111,0.332,73.048,Not significant,5.833,144,Under 1M departures,False
+Malawi,72532,1,13.787,0.349,76.816,Not significant,5.833,145,Under 1M departures,False
+Bhutan,72328,0,0.0,0.0,51.002,Not significant,5.833,146,Under 1M departures,False
+Senegal,70685,6,84.884,31.151,184.756,Significantly above,5.833,147,Under 1M departures,False
+Suriname,67121,4,59.594,16.237,152.583,Significantly above,5.833,148,Under 1M departures,False
+Mauritania,64454,2,31.03,3.758,112.091,Not significant,5.833,149,Under 1M departures,False
+Burkina Faso,55969,0,0.0,0.0,65.909,Not significant,5.833,150,Under 1M departures,False
+Uganda,51011,6,117.621,43.165,256.011,Significantly above,5.833,151,Under 1M departures,False
+Guatemala,46403,2,43.101,5.22,155.694,Not significant,5.833,152,Under 1M departures,False
+Marshall Islands,40121,0,0.0,0.0,91.944,Not significant,5.833,153,Under 1M departures,False
+Guyana,34410,9,261.552,119.598,496.507,Significantly above,5.833,154,Under 1M departures,False
+North Macedonia,30797,0,0.0,0.0,119.78,Not significant,5.833,155,Under 1M departures,False
+American Samoa,28685,0,0.0,0.0,128.599,Not significant,5.833,156,Under 1M departures,False
+"Korea, Dem. People's Rep.",25330,1,39.478,1.0,219.959,Not significant,5.833,157,Under 1M departures,False
+Bosnia and Herzegovina,25169,0,0.0,0.0,146.56,Not significant,5.833,158,Under 1M departures,False
+Guam,23609,0,0.0,0.0,156.249,Not significant,5.833,159,Under 1M departures,False
+Tonga,22002,0,0.0,0.0,167.661,Not significant,5.833,160,Under 1M departures,False
+Dominican Republic,19286,1,51.851,1.313,288.896,Not significant,5.833,161,Under 1M departures,False
+"Somalia, Fed. Rep.",17557,0,0.0,0.0,210.098,Not significant,5.833,162,Under 1M departures,False
+Mali,15583,1,64.172,1.625,357.546,Not significant,5.833,163,Under 1M departures,False
+Kiribati,14398,0,0.0,0.0,256.208,Not significant,5.833,164,Under 1M departures,False
+Sao Tome and Principe,13127,2,152.358,18.451,550.369,Significantly above,5.833,165,Under 1M departures,False
+Benin,9846,0,0.0,0.0,374.64,Not significant,5.833,166,Under 1M departures,False
+Naoero,8348,0,0.0,0.0,441.888,Not significant,5.833,167,Under 1M departures,False
+"Gambia, The",7128,0,0.0,0.0,517.52,Not significant,5.833,168,Under 1M departures,False
+Eswatini,7080,0,0.0,0.0,521.028,Not significant,5.833,169,Under 1M departures,False
+Niger,6512,3,460.688,95.005,1346.326,Significantly above,5.833,170,Under 1M departures,False
+Sierra Leone,5888,4,679.348,185.099,1739.4,Significantly above,5.833,171,Under 1M departures,False
+Chad,4725,2,423.233,51.255,1528.862,Significantly above,5.833,172,Under 1M departures,False
+Aruba,4408,0,0.0,0.0,836.86,Not significant,5.833,173,Under 1M departures,False
+Eritrea,4301,0,0.0,0.0,857.679,Not significant,5.833,174,Under 1M departures,False
+Central African Republic,2234,0,0.0,0.0,1651.244,Not significant,5.833,175,Under 1M departures,False
+Nicaragua,452,0,0.0,0.0,8161.238,Not significant,5.833,176,Under 1M departures,False

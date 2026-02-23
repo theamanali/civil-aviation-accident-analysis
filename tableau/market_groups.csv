@@ -1,0 +1,4 @@
+market_group,countries,accidents,departures,accidents_per_million_departures
+Busiest 20,20,1907,452936714,4.21
+Other 1M+ departures,35,534,90239978,5.918
+Under 1M departures,121,552,32471060,17.0

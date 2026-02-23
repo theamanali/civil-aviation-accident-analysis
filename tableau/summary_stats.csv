@@ -1,0 +1,20 @@
+metric,value,ci_low,ci_high
+"Accidents per million departures, 1970s",17.506803418459764,,
+"Accidents per million departures, 2013-2022",5.059158050838208,,
+"Accident rate change, 1970s to 2013-2022 (%)",-71.10176009914144,,
+Accident rate trend (% per year),-2.9307905763068853,-3.147284706598341,-2.713812518349501
+"Deaths per million passengers, 1970s",4.107824186360041,,
+"Deaths per million passengers, 2013-2022",0.1330970408940168,,
+"Passengers per on-board death, 1970s",243437.87723936254,,
+"Passengers per on-board death, 2013-2022",7513315.046547768,,
+Death rate trend (% per year),-7.7863273723255855,-8.510960728332229,-7.055954602015135
+"Worldwide accidents per million departures, 2000-2019",5.8332208574973565,,
+"Smaller markets vs busiest 20, rate ratio",2.1020015073856455,1.394907078509234,3.3009889806397243
+"Mid-sized vs busiest 20, Mann-Whitney p",0.5117512121570712,,
+"Military operators, % of accidents fatal",66.00402617010569,,
+"Civil operators, % of accidents fatal",40.666381888082014,,
+"Military vs civil operators, Mann-Whitney p",3.637980883592605e-05,,
+Military records with no fatality count (%),36.86293320542031,,
+Civil records with no fatality count (%),5.82873282834767,,
+"Month differences, chi-square p",6.374665415469196e-07,,
+"Season differences, chi-square p",0.3157525317934993,,

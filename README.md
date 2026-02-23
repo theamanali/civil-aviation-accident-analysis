@@ -93,6 +93,7 @@ In the Jupyter tab that opens in your browser, choose **Run → Run All Cells**.
 - The Kaggle dataset is pinned to version 1, so results don't change if it's updated.
 - World Bank data is read from saved copies in [`data/world_bank/`](data/world_bank), so results don't change when the World Bank revises past figures. To pull the latest data, run `python scripts/update_world_bank_data.py` and re-run the notebook.
 - The README charts come straight from the notebook: `python scripts/export_readme_charts.py` re-renders them in light and dark versions, and GitHub shows the dark ones to visitors using dark mode.
+- `python scripts/export_tableau_data.py` writes the cleaned records and the tables behind each finding (with confidence intervals and trend lines precomputed) to `tableau/` as CSVs for Tableau.
 - A [GitHub Action](.github/workflows/run-notebook.yml) runs the whole notebook on pandas 2 and 3 on every push and weekly, to catch breakage from new package releases.
 
 ## Possible Next Steps
@@ -106,4 +107,4 @@ In the Jupyter tab that opens in your browser, choose **Run → Run All Cells**.
 
 ## License
 
-Code is released under the [MIT License](LICENSE). The World Bank data in `data/world_bank/` is © World Bank, licensed under CC BY 4.0. The accident dataset isn't included in this repository.
+Code is released under the [MIT License](LICENSE). The World Bank data in `data/world_bank/` is © World Bank, licensed under CC BY 4.0. `tableau/accidents.csv` is a cleaned copy of the [Civil Aviation Accidents](https://www.kaggle.com/datasets/warcoder/civil-aviation-accidents) dataset on Kaggle, sourced from the [Aviation Safety Network](https://aviation-safety.net/).
