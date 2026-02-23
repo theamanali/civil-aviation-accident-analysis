@@ -2,7 +2,7 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/theamanali/civil-aviation-accident-analysis/blob/main/analysis.ipynb)
 [![Run notebook](https://github.com/theamanali/civil-aviation-accident-analysis/actions/workflows/run-notebook.yml/badge.svg)](https://github.com/theamanali/civil-aviation-accident-analysis/actions/workflows/run-notebook.yml)
-![Python](https://img.shields.io/badge/Python-3-blue)
+![Python](https://img.shields.io/badge/Python-3.12%2B-blue)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
 
 Exploratory data analysis of **23,917 civil aviation accidents and incidents from 1919 to 2023**, from the [Aviation Safety Network](https://aviation-safety.net/) global database, combined with World Bank flight and passenger counts to measure accident and death rates.
@@ -80,8 +80,8 @@ It takes under a minute once Colab connects. Tables and charts appear under each
 ```bash
 git clone https://github.com/theamanali/civil-aviation-accident-analysis.git
 cd civil-aviation-accident-analysis
-python3 -m venv .venv
-source .venv/bin/activate   # on Windows: .venv\Scripts\activate
+python3 -m venv .venv          # on Windows: python -m venv .venv
+source .venv/bin/activate      # on Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 jupyter notebook analysis.ipynb
 ```
