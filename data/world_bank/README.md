@@ -8,6 +8,6 @@ Saved copies of the World Bank data used by `analysis.ipynb`, so the results don
 | `world_IS.AIR.PSGR.csv` | Passengers carried, worldwide ([IS.AIR.PSGR](https://data.worldbank.org/indicator/IS.AIR.PSGR)) | 1970-2023 | 2026-10-08 |
 | `countries_IS.AIR.DPRT_2000-2019.csv` | Registered carrier departures, by country ([IS.AIR.DPRT](https://data.worldbank.org/indicator/IS.AIR.DPRT)) | 2000-2019 | 2026-10-08 |
 
-To refresh, run `python scripts/update_world_bank_data.py` and re-run the notebook.
+Snapshots taken on 2026-10-12. To refresh, run `python scripts/update_world_bank_data.py` and re-run the notebook.
 
 Source: World Bank, World Development Indicators, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

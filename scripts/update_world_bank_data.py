@@ -7,6 +7,7 @@ World Bank revises past figures. Run this to pull the latest data, then re-run t
 """
 
 import csv
+import datetime
 import json
 import pathlib
 import urllib.request
@@ -66,7 +67,7 @@ def main():
         "World Bank groupings such as \"World\" or \"High income\" that aren't countries.\n\n"
         "| File | Series | Years | World Bank last updated |\n|---|---|---|---|\n"
         + "\n".join(table)
-        + "\n\nTo refresh, run `python scripts/update_world_bank_data.py` and re-run the notebook.\n\n"
+        + f"\n\nSnapshots taken on {datetime.date.today().isoformat()}. To refresh, run `python scripts/update_world_bank_data.py` and re-run the notebook.\n\n"
         "Source: World Bank, World Development Indicators, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).\n"
     )
 
