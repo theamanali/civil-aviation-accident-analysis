@@ -111,13 +111,15 @@ jupyter notebook analysis.ipynb
 
 In the Jupyter tab that opens in your browser, choose **Run → Run All Cells**.
 
+**The Tableau workbook:** open [`tableau/civil_aviation_accident_analysis.twbx`](tableau/civil_aviation_accident_analysis.twbx) in [Tableau Public](https://public.tableau.com/app/learn/how-to-use-tableau-public) (free) or Tableau Desktop. Its data is packaged inside, so nothing else is needed.
+
 ## Reproducibility
 
 - The Kaggle dataset is pinned to version 1, so results don't change if it's updated.
 - World Bank data is read from saved copies in [`data/world_bank/`](data/world_bank), so results don't change when the World Bank revises past figures. To pull the latest data, run `python scripts/update_world_bank_data.py` and re-run the notebook.
 - The README charts come straight from the notebook: `python scripts/export_readme_charts.py` re-renders them in light and dark versions, and GitHub shows the dark ones to visitors using dark mode.
-- `python scripts/export_tableau_data.py` writes the cleaned records and the tables behind each finding (with confidence intervals and trend lines precomputed) to `tableau/` as CSVs for Tableau.
-- A [GitHub Action](.github/workflows/run-notebook.yml) runs the whole notebook on pandas 2 and 3 on every push and weekly, to catch breakage from new package releases.
+- `python scripts/export_tableau_data.py` writes the cleaned records and the tables behind each finding (with confidence intervals and trend lines precomputed) to `tableau/` as CSVs for Tableau. To update the story after re-exporting, open the `.twbx`, choose **Data → [each data source] → Extract → Refresh**, and save it to Tableau Public again. The extracts record your machine's path to the CSVs, so on another computer Tableau asks you to locate each one; point it to the matching file in `tableau/`.
+- A [GitHub Action](.github/workflows/run-notebook.yml) runs the whole notebook on pandas 2 and 3 on every push and weekly, to catch breakage from new package releases, and checks that the committed Tableau CSVs still match what the notebook produces.
 
 ## Possible Next Steps
 
