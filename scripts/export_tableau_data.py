@@ -169,7 +169,9 @@ def severity_with_intervals(ns: dict, table: pd.DataFrame, fatal: pd.Series, nam
     low, high = ns["wilson_interval"](table["fatal_accidents"], table["accidents"])
     table["ci_low"], table["ci_high"] = low.round(2), high.round(2)
     table = table.rename(columns={"accidents": "accidents_with_known_deaths"})
-    return table.sort_values("accidents_with_known_deaths", ascending=False).rename_axis(name).reset_index()
+    # Break ties by name so the row order is the same on every platform
+    table = table.rename_axis(name).reset_index()
+    return table.sort_values(["accidents_with_known_deaths", name], ascending=[False, True], ignore_index=True)
 
 
 def aircraft_severity_table(ns: dict) -> pd.DataFrame:
@@ -230,9 +232,13 @@ def summary_table(ns: dict) -> pd.DataFrame:
         ("Month differences, chi-square p", ns["p_month"], None, None),
         ("Season differences, chi-square p", ns["p_season"], None, None),
     ]
-    return pd.DataFrame(rows, columns=["metric", "value", "ci_low", "ci_high"]).astype(
+    table = pd.DataFrame(rows, columns=["metric", "value", "ci_low", "ci_high"]).astype(
         {"value": float, "ci_low": float, "ci_high": float}
     )
+    # 6 significant figures, so floating-point noise between platforms doesn't change the file
+    for column in ["value", "ci_low", "ci_high"]:
+        table[column] = table[column].map(lambda v: float(f"{v:.6g}"))
+    return table
 
 
 def main():
