@@ -1,10 +1,10 @@
 # Civil Aviation Accident Analysis
 
+[![Tableau story](https://img.shields.io/badge/Tableau-interactive%20story-E97627)](https://public.tableau.com/app/profile/aman.ali5463/viz/CivilAviationAccidentAnalysis/Story)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/theamanali/civil-aviation-accident-analysis/blob/main/analysis.ipynb)
 [![Run notebook](https://github.com/theamanali/civil-aviation-accident-analysis/actions/workflows/run-notebook.yml/badge.svg)](https://github.com/theamanali/civil-aviation-accident-analysis/actions/workflows/run-notebook.yml)
-![Python](https://img.shields.io/badge/Python-3.12%2B-blue)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
-[![Tableau story](https://img.shields.io/badge/Tableau-interactive%20story-E97627)](https://public.tableau.com/app/profile/aman.ali5463/viz/CivilAviationAccidentAnalysis/Story)
+![Python](https://img.shields.io/badge/Python-3.12%2B-blue)
 
 Exploratory data analysis of **23,917 civil aviation accidents and incidents from 1919 to 2023**, from the [Aviation Safety Network](https://aviation-safety.net/) global database, combined with World Bank flight and passenger counts to measure accident and death rates.
 
@@ -21,7 +21,23 @@ More findings (seasonality, World War II, fatalities, data quality) are in the [
 
 ## Visualizations
 
-An [interactive Tableau story](https://public.tableau.com/app/profile/aman.ali5463/viz/CivilAviationAccidentAnalysis/Story) walks through each finding, with confidence intervals in the tooltips and a final page for filtering every record by year, country, and operator type.
+### Tableau
+
+An [interactive Tableau story](https://public.tableau.com/app/profile/aman.ali5463/viz/CivilAviationAccidentAnalysis/Story) walks through the findings in seven points:
+
+1. Accidents per flight down 71% since the 1970s
+2. The risk of dying on board down 97%
+3. Accident rates for the busiest countries, on a map and with confidence intervals
+4. The smallest aviation markets have the highest rates
+5. Modern jets are the most survivable
+6. Military accidents were more often fatal, with the missing-data caveat
+7. An explore page for filtering every record by year, country, occurrence type, and civil or military operator
+
+Hover over any point for its numbers and confidence interval. The workbook is [`tableau/civil_aviation_accident_analysis.twbx`](tableau/civil_aviation_accident_analysis.twbx), built from CSVs that `scripts/export_tableau_data.py` exports from the notebook.
+
+### Matplotlib and Seaborn
+
+The notebook's charts for the main findings, rendered in light and dark versions:
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/accident_rate-dark.png">
@@ -96,7 +112,7 @@ In the Jupyter tab that opens in your browser, choose **Run → Run All Cells**.
 - The Kaggle dataset is pinned to version 1, so results don't change if it's updated.
 - World Bank data is read from saved copies in [`data/world_bank/`](data/world_bank), so results don't change when the World Bank revises past figures. To pull the latest data, run `python scripts/update_world_bank_data.py` and re-run the notebook.
 - The README charts come straight from the notebook: `python scripts/export_readme_charts.py` re-renders them in light and dark versions, and GitHub shows the dark ones to visitors using dark mode.
-- `python scripts/export_tableau_data.py` writes the cleaned records and the tables behind each finding (with confidence intervals and trend lines precomputed) to `tableau/` as CSVs for Tableau. [`tableau/civil_aviation_accident_analysis.twbx`](tableau/civil_aviation_accident_analysis.twbx) is the workbook behind the Tableau story.
+- `python scripts/export_tableau_data.py` writes the cleaned records and the tables behind each finding (with confidence intervals and trend lines precomputed) to `tableau/` as CSVs for Tableau.
 - A [GitHub Action](.github/workflows/run-notebook.yml) runs the whole notebook on pandas 2 and 3 on every push and weekly, to catch breakage from new package releases.
 
 ## Possible Next Steps
