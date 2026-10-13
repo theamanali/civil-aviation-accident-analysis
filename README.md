@@ -17,7 +17,7 @@ Exploratory data analysis of **23,917 civil aviation accidents and incidents fro
 - **Modern jets are the most survivable.** About 21% of Boeing 727 and 737 accidents killed anyone, versus 62% for the DC-3 (95% CIs 17–26% vs 60–64%).
 - **Military accidents were more often fatal.** 66% of military operators' accidents killed someone, versus 41% for civil operators (p < 0.001). But 37% of military records lack a fatality count, so that gap may be overstated.
 
-More findings (seasonality, World War II, fatalities, data quality) are in the [notebook](analysis.ipynb), each with a short takeaway.
+More findings (seasonality, World War II, fatalities, data quality) are in the [notebook](analysis.ipynb).
 
 ## Visualizations
 
