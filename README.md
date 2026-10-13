@@ -4,6 +4,7 @@
 [![Run notebook](https://github.com/theamanali/civil-aviation-accident-analysis/actions/workflows/run-notebook.yml/badge.svg)](https://github.com/theamanali/civil-aviation-accident-analysis/actions/workflows/run-notebook.yml)
 ![Python](https://img.shields.io/badge/Python-3.12%2B-blue)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
+[![Tableau story](https://img.shields.io/badge/Tableau-interactive%20story-E97627)](https://public.tableau.com/app/profile/aman.ali5463/viz/CivilAviationAccidentAnalysis/Story)
 
 Exploratory data analysis of **23,917 civil aviation accidents and incidents from 1919 to 2023**, from the [Aviation Safety Network](https://aviation-safety.net/) global database, combined with World Bank flight and passenger counts to measure accident and death rates.
 
@@ -19,6 +20,8 @@ Exploratory data analysis of **23,917 civil aviation accidents and incidents fro
 More findings (seasonality, World War II, fatalities, data quality) are in the [notebook](analysis.ipynb), each with a short takeaway.
 
 ## Visualizations
+
+An [interactive Tableau story](https://public.tableau.com/app/profile/aman.ali5463/viz/CivilAviationAccidentAnalysis/Story) walks through each finding, with confidence intervals in the tooltips and a final page for filtering every record by year, country, and operator type.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/accident_rate-dark.png">
@@ -59,11 +62,11 @@ Charts for the other findings (by year, month, season, country, and category) ar
    - On-board deaths per million passengers, counting bombings, shootdowns, and hijackings alongside accidents, since they kill passengers too.
    - Accident rates for the 20 busiest countries using country-level departures, with a name mapping between ASN and World Bank country names and a note that ASN records accident location while the World Bank records airline registration.
 7. **Statistical testing:** chi-square tests for monthly and seasonal patterns (adjusted for month and season length), log-linear trend fits with confidence intervals for the accident and death rates, exact Poisson confidence intervals for country rates, a cluster bootstrap (resampling whole countries) for the gap between the busiest and smaller markets, Wilson confidence intervals for the share of fatal accidents, and Mann-Whitney tests comparing military with civil operators and mid-sized with the busiest countries.
-8. **Visualization:** plotted with Matplotlib and Seaborn, in light and dark versions for the README.
+8. **Visualization:** plotted with Matplotlib and Seaborn, in light and dark versions for the README, and built an interactive Tableau story from CSVs exported by the notebook.
 
 ## Tech Stack
 
-Python · pandas · NumPy · SciPy · Matplotlib · Seaborn · kagglehub · Google Colab
+Python · pandas · NumPy · SciPy · Matplotlib · Seaborn · Tableau · kagglehub · Google Colab
 
 ## Run It
 
@@ -93,7 +96,7 @@ In the Jupyter tab that opens in your browser, choose **Run → Run All Cells**.
 - The Kaggle dataset is pinned to version 1, so results don't change if it's updated.
 - World Bank data is read from saved copies in [`data/world_bank/`](data/world_bank), so results don't change when the World Bank revises past figures. To pull the latest data, run `python scripts/update_world_bank_data.py` and re-run the notebook.
 - The README charts come straight from the notebook: `python scripts/export_readme_charts.py` re-renders them in light and dark versions, and GitHub shows the dark ones to visitors using dark mode.
-- `python scripts/export_tableau_data.py` writes the cleaned records and the tables behind each finding (with confidence intervals and trend lines precomputed) to `tableau/` as CSVs for Tableau.
+- `python scripts/export_tableau_data.py` writes the cleaned records and the tables behind each finding (with confidence intervals and trend lines precomputed) to `tableau/` as CSVs for Tableau. [`tableau/civil_aviation_accident_analysis.twbx`](tableau/civil_aviation_accident_analysis.twbx) is the workbook behind the Tableau story.
 - A [GitHub Action](.github/workflows/run-notebook.yml) runs the whole notebook on pandas 2 and 3 on every push and weekly, to catch breakage from new package releases.
 
 ## Possible Next Steps
