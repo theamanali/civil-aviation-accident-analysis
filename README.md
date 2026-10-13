@@ -23,6 +23,10 @@ More findings (seasonality, World War II, fatalities, data quality) are in the [
 
 ### Tableau
 
+<a href="https://public.tableau.com/app/profile/aman.ali5463/viz/CivilAviationAccidentAnalysis/Story"><img alt="Tableau dashboard of accident rates by country, with a map and 95% confidence intervals" src="images/tableau_country_rates.png"></a>
+
+*Point 3 of the story. Click the image to open the interactive version.*
+
 An [interactive Tableau story](https://public.tableau.com/app/profile/aman.ali5463/viz/CivilAviationAccidentAnalysis/Story) walks through the findings in seven points:
 
 1. Accidents per flight down 71% since the 1970s
